@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>
+            Venta de Billetes
+        </title>
+        <link rel="stylesheet" href="index.css">
+        <style>/* Tema 4: CSS */</style>
+        <script>/* Tema 5: JavaScript */</script>
+    </head>
+    <body>
+        
+        <a href="index.html">
+            <img src="logo.jpg" alt="imagen" class ='logo' width="100" >
+        </a>
+      
+       
+        <ul class="contenedor">
+            <li><a href="Billetes.html"> Billetes</a></li>
+                <ul class="submenu">
+                    <li><a href=A.html>Sección A</a></li>
+                    <li> <a href="B.html" >Sección B</a></li>
+                    <li> <a href="C.html" >Sección C</a></li>
+                </ul></li>
+                <li><a href="Comprar.html" >Comprar</a> </li>  
+                <li><a href="Vender.html" >Vender</a> </li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Paises.html">Paises</a></li> 
+                </ul>
+        </ul>
+
+
+        <h1>
+            Venta de Billetes
+        </h1>
+        <p>
+            ¿Ha heredado una colección de billetes y no sabe qué hacer con ella?<br> ¿Tiene una colección avanzada con ejemplares repetidos?<br> ¿Quiere abrir otro canal de venta?<br>
+            Si tiene billetes y los quiere vender, únase a nuestra comunidad de coleccionistas y entusiastas y comparta su pasión por los billetes antiguos. Póngase en contacto con nosotros a través de este formulario y le mandaremos las condiciones de venta. Nuestro sitio ofrece una plataforma segura y fácil de usar para listar sus billetes.
+        </p>
+
+        <h3>
+            ¡Quiero darme de alta como vendedor!
+        </h3>
+        <form class="formularioizquierda" action="enviado.html" method="post" >
+            <fieldset style="background-color: rgb(188,219,220);">
+             <legend>Crear una cuenta</legend>
+             <p>
+              <label for="name_id">Nombre:</label><br>
+               <input type="text" id="name" required>
+             </p>
+             <p>
+                <label for="apellidos_id">Apellidos:</label><br>
+                 <input type="text" id="name" required>
+               </p>
+             <p>
+              <label for="phone_id">Teléfono:</label><br>
+                 <input type="password" id="movil" required>
+              <!-- Campo de teléfono -->
+             </p>
+             <p>
+              <label for="email_id">Email:</label><br>
+               <input tupe="text" id="email" name="email" maxlength=470 size=25 required> </input>
+              <!-- Campo de email obligatorio -->
+             </p>
+             <p>
+                <label for="fecha">Fecha de nacimiento:</label><br>
+                 <input type="date" id="fecha" name="fecha" min="1900-01-01 required">
+               </p>
+            </fieldset>
+            <fieldset  style="background-color: rgb(188,219,220)">
+             <!-- Botón para enviar -->
+              <button type="submit">Enviar</button>
+             <!-- Botón para resetear el formulario -->
+               <button type="reset">Limpiar</button>
+            </fieldset>
+           </form>
+           <footer class="pie">
+            @2024 - BilletesEspaña - Todos los derechos reservados
+            </footer>
+
+    </body>

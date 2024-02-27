@@ -1,0 +1,215 @@
+    body{
+        background-color: rgb(260, 240, 220);
+        margin:auto;
+        
+        
+    }
+    .logo {
+        display: block;
+        margin:auto;
+        margin-top: 10px;
+        margin-bottom:10px;
+        grid-row:1;
+    }
+
+   
+    .contenedor{
+        display: flex;
+        list-style:none;
+        margin: 0;
+        background: rgb(188,219,220);
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    .contenedor li{
+        flex: 1 1 0;
+        margin: 0px;
+    }
+    
+    
+    .contenedor li:hover {
+        background:  rgb(220, 200, 180);
+        
+    }
+    .contenedor a {
+        font: 25px sans-serif;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        color: rgb(80, 40, 20);
+        user-select: none;
+        font-family: Georgia, serif;
+        font-size: 21px; 
+    }    
+
+    .titulo {
+        color: rgb(80, 40, 20);
+        margin: 10px; 
+    }
+
+   
+
+    .inscripcion {
+        background: rgb(188,219,220);
+        width: 100%;
+        display:block;
+        text-align: center;
+       
+     }
+
+     .pie {
+        display: flex;
+        bottom:0;
+        text-align:left;
+        padding: 10px;   
+        
+        margin: 10px;     
+        font-family: Georgia, serif;
+        font-size: 15px;
+        background:  rgb(220, 200, 180); 
+     }
+
+
+    body h1 {
+        text-align: center;
+        color: rgb(80, 40, 20);
+    }
+
+
+    body h3 {
+        text-align: center;
+        color: rgb(80, 40, 20);
+    }
+    body p {
+        text-align: center;
+    }
+
+    body img {
+        margin: 20px auto;
+        display: block;
+    } 
+
+
+    form.formularioizquierda * { 
+    text-align:left;
+    } 
+
+
+    .submenu {
+        display:none;
+        list-style: none;
+        padding: 0;
+        position: absolute;
+        width: 24.6%;
+        
+    }
+
+    .submenu > li {
+        background: rgb(188,219,220);
+        width: 100%;
+        text-align: center;
+        color: rgb(80, 40, 20);
+        flex: 1 1 0;
+    }
+
+    .contenedor > li:hover > .submenu {
+        display: block;
+        flex: 1 1 0;
+    }
+
+
+
+    p {
+        color: rgb(80, 40, 20);
+        font-size: 20px;
+        margin: 10px;
+        }
+
+
+
+    .inscripcion fieldset {
+        background: rgb(188,219,220);
+        border: none;
+
+        margin:20px
+    }
+
+
+
+
+    .A {
+        color: rgb(60, 20, 0);
+    }
+
+    .B {
+        color: rgb(60, 20, 0);
+    }
+
+    .C {
+        color: rgb(60, 20, 0);
+    }
+
+    .table-primera {
+        width: 100%;
+        margin: 0 auto;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+    table{
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 3px solid rgb(188,219,220);
+    }
+
+
+
+    th {
+        font-size: 15px;
+        text-align: center;
+        padding: 8px; 
+    }
+    .table-primera td {
+        font-size: 15px;
+        text-align: center;
+        padding: 0px; 
+    }
+    table td 
+    {
+        font-size: 18px;
+        text-align: center;
+        padding: 4px; 
+    }
+
+
+    table .billete:hover {
+        border-collapse: collapse;
+        background-color:rgb(168,199,200); 
+    }
+
+    table img {
+        width: 350px;
+        height: auto;
+    }
+
+    .listado {
+        margin:20px;
+        margin-top:100px;
+    }
+
+    #divLista {
+        margin: 20px;
+        display: 'block';
+    }
+
+    #divInfo {
+        margin: 20px;
+        display: 'block';
+    }
+
+
+
+
