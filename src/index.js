@@ -18,6 +18,21 @@ selector.id='pais';
 const inputPaises = document.createElement('input');
 inputPaises.id="inputPaises";
 
+
+
+/*
+const tBody = document.createElement('tbody');
+const tabla = document.createElement('table');
+tabla.id = 'tabla';
+
+const tHead = document.createElement('thead');
+tHead.id="tHead";
+
+const tH = document.createElement('th');
+tH.id="tH";
+*/
+
+
 const labelBusqueda = document.createElement('label');
 labelBusqueda.id="labelBusqueda";
 labelBusqueda.textContent="Búsqueda directa: ";
@@ -69,7 +84,7 @@ const busqueda = function(){
            
             opcion.value = pais;
             opcion.textContent = pais;
-           
+            //crearTabla(pais);
             selector.appendChild(opcion);
             
             listaMonedas.push(moneda);
@@ -78,12 +93,14 @@ const busqueda = function(){
         };
         
         divLista.appendChild(selector); // Agregar selector a divLista
-        divInfo.appendChild(labelBusqueda);
-        divInfo.appendChild(inputPaises);
+        //divInfo.appendChild(labelBusqueda);
+        //divInfo.appendChild(inputPaises);
         //listaMonedas.appendChild(selectorMonedas);
 
         document.body.appendChild(divLista); // Agregar divLista al body
+        console.log(selector);
         document.body.appendChild(divInfo);
+        
         document.getElementById('pais').addEventListener('change', function(event) {
             const seleccionado = event.target.value;
             const posicion = event.target.selectedIndex;
@@ -91,6 +108,8 @@ const busqueda = function(){
             mostrarImagen(url);
             mostrarInfo(posicion);
         });
+
+       
         
     })
     .catch(error => {
@@ -121,7 +140,7 @@ const mostrarImagen= function(url) {
         }
     })     
     .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
+        console.error('No existe imagen enlazada:', error);
     })  
     }
 
@@ -133,6 +152,33 @@ const mostrarInfo = function(posicion) {
     document.body.appendChild(parrafo1);
     document.body.appendChild(parrafo2);
 }
+
+/*
+const crearTabla = function (pais) {
+    const tR = document.createElement('tr');
+    const celda= document.createElement('td');
+    const boton = document.createElement('button'); // Crear un elemento de botón
+    boton.textContent = pais;
+    boton.id="boton";
+
+    boton.addEventListener('click', function(event) {
+        console.log(pais);
+        const seleccionado = pais; // Utilizamos el país asociado al botón
+        const url = conversor(seleccionado);
+        mostrarImagen(url);
+        //mostrarInfo(event.target.textContent); // Pasamos el texto del botón como argumento
+    });
+   
+    tR.appendChild(boton);
+    tBody.appendChild(tR);
+    tabla.appendChild(tBody);
+    document.body.appendChild(tabla);
+
+
+   
+}
+
+*/
 
   
 

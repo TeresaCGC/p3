@@ -210,6 +210,11 @@
         display: 'block';
     }
 
+    #boton:hover {
+        border-collapse: collapse;
+        background-color:rgb(168,199,200); 
+    }
+
 
 
 
