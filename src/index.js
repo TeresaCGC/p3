@@ -116,6 +116,7 @@ const mostrarImagen= function(url) {
     })     
     .catch(error => {
         console.error('No existe imagen enlazada:', error);
+        throw new Error (error);
     })  
     }
 
