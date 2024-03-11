@@ -18,20 +18,11 @@ selector.id='pais';
 const inputPaises = document.createElement('input');
 inputPaises.id="inputPaises";
 
+const selectorSimbolo = document.createElement("select");
+selectorSimbolo.id="selectorSimbolo";
 
-
-/*
-const tBody = document.createElement('tbody');
-const tabla = document.createElement('table');
-tabla.id = 'tabla';
-
-const tHead = document.createElement('thead');
-tHead.id="tHead";
-
-const tH = document.createElement('th');
-tH.id="tH";
-*/
-
+const selectorMoneda = document.createElement("select");
+selectorMoneda.id="selectorMoneda";
 
 const labelBusqueda = document.createElement('label');
 labelBusqueda.id="labelBusqueda";
@@ -48,6 +39,7 @@ const parrafo2 = document.createElement("p");
 
 const listaMonedas= [];  //solo quiero la lista para el navegador, no quiero que se me muestra en la web
 const listaSimbolo= [];
+const listaPais = [];
 
 divLista.appendChild(labelPaises); // Agregar labelPaises a divLista
 
@@ -65,48 +57,31 @@ const busqueda = function(){
         return response.json();
     }) 
     .then(data =>{
-        
-        let pais;
-        let opcion;
-        let moneda;
-        let simbolo;
-        for(let i=0; i<data.length; i++)
-        {
-            pais = data[i].name.common;
-            for(const infoMoneda in data[i].currencies){
-                moneda= data[i].currencies[infoMoneda].name;
-                simbolo = data[i].currencies[infoMoneda].symbol;
-            }
 
-            console.log("esto es el pais",pais);
-            console.log("esto es la moneda", moneda);
+        ordenarLista(data);
+        listaPais.forEach( function(pais) {
+            
             opcion = document.createElement('option');
-           
+            opcionSimbolo = document.createElement('option');
+
             opcion.value = pais;
             opcion.textContent = pais;
-            //crearTabla(pais);
+
             selector.appendChild(opcion);
+            selectorSimbolo.appendChild(opcionSimbolo);
             
-            listaMonedas.push(moneda);
-            listaSimbolo.push(simbolo);
-        
-        };
+        });
         
         divLista.appendChild(selector); // Agregar selector a divLista
-        //divInfo.appendChild(labelBusqueda);
-        //divInfo.appendChild(inputPaises);
-        //listaMonedas.appendChild(selectorMonedas);
-
-        document.body.appendChild(divLista); // Agregar divLista al body
-        console.log(selector);
+        document.body.appendChild(divLista); // Agregar divLista al body        
         document.body.appendChild(divInfo);
         
         document.getElementById('pais').addEventListener('change', function(event) {
             const seleccionado = event.target.value;
-            const posicion = event.target.selectedIndex;
+            console.log("dentro del eventlistener", seleccionado);
             const url = conversor(seleccionado);
             mostrarImagen(url);
-            mostrarInfo(posicion);
+            mostrarInfo(seleccionado);
         });
 
        
@@ -144,13 +119,53 @@ const mostrarImagen= function(url) {
     })  
     }
 
-const mostrarInfo = function(posicion) {
-    console.log(listaMonedas[posicion]);
-    console.log(listaSimbolo[posicion]);
-    parrafo1.textContent="Moneda vigente: "+ listaMonedas[posicion];
-    parrafo2.textContent="\n Simbolo: "+ listaSimbolo[posicion];
+const mostrarInfo = function(pais) {
+   
+    for (let i = 0; i < selectorMoneda.options.length; i++) {
+        
+        if (selectorMoneda.options[i].value == pais) {            
+            parrafo1.textContent="Moneda vigente: "+ selectorMoneda.options[i].textContent;
+            parrafo2.textContent="\n Simbolo: "+ selectorSimbolo.options[i].textContent;
+        }
     document.body.appendChild(parrafo1);
     document.body.appendChild(parrafo2);
+    }
+}   
+
+
+
+const ordenarLista = function(data) {
+        console.log(data);
+        let pais;
+        let moneda;
+        let simbolo;
+        for(let i=0; i<data.length; i++)
+        {
+            pais = data[i].name.common;
+            console.log(pais)
+            for(const infoMoneda in data[i].currencies){
+                moneda= data[i].currencies[infoMoneda].name;
+                simbolo = data[i].currencies[infoMoneda].symbol;
+                console.log(moneda);
+                console.log(simbolo);
+            }
+
+            listaPais.push(pais);
+         
+            opcionSimbolo = document.createElement('option');
+            opcionMoneda = document.createElement('option');
+            opcionSimbolo.value = pais;
+            opcionSimbolo.textContent=simbolo;
+
+            opcionMoneda.value = pais;
+            opcionMoneda.textContent=moneda;
+         
+            selectorSimbolo.appendChild(opcionSimbolo);
+            selectorMoneda.appendChild(opcionMoneda);
+        
+        };
+        listaPais.sort();
+        
 }
 
 /*
